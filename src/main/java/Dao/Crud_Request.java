@@ -44,7 +44,7 @@ public class Crud_Request {
 
                 Request registro = new Request();
 
-                user = rs.getString("user");
+                user = rs.getString("user1");
                 registro.setUser(user);
 
                 destiny = rs.getString("destiny");
@@ -69,7 +69,7 @@ public class Crud_Request {
     public boolean insert(Request t) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " insert into requests (user,destiny,state)" + "values (?,?,?)";
+        String query = " insert into requests (user1,destiny,state)" + "values (?,?,?)";
         PreparedStatement preparedStmt = null;
 
         try {
@@ -89,7 +89,7 @@ public class Crud_Request {
     public boolean update(String state, String user, String destiny) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " update requests SET state=? WHERE  user=? AND `destiny`=? AND `state`='en espera' ";
+        String query = " update requests SET state=? WHERE  user1=? AND `destiny`=? AND `state`='en espera' ";
         PreparedStatement preparedStmt = null;
         try {
 
@@ -108,7 +108,7 @@ public class Crud_Request {
     public boolean delete(String state, String user, String destiny) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " delete from requests WHERE `user`=? AND `destiny`=? AND `state`=?";
+        String query = " delete from requests WHERE `user1`=? AND `destiny`=? AND `state`=?";
         
         PreparedStatement preparedStmt = null;
         try {
