@@ -75,7 +75,7 @@ public class Crud_Routing {
     
     public List<Routing> Distancias(String estilo, String fecha) throws SQLException {
         List<Routing> departamentos = null;
-        String query = "SELECT * FROM `routing` WHERE Style='"+estilo+"' AND Date='"+fecha+"'; ";
+        String query = "SELECT * FROM routing WHERE Style='"+estilo+"' AND Date='"+fecha+"'; ";
         Connection connection = Conexion.getConnection();
         try {
             Statement st = connection.createStatement();
@@ -117,7 +117,7 @@ public class Crud_Routing {
     
     public List<String> Estilos(String fecha) throws SQLException {
         List<String> departamentos = null;
-        String query = "SELECT Style FROM `routing` WHERE Date='"+fecha+"' GROUP BY Style;";
+        String query = "SELECT Style FROM routing WHERE Date='"+fecha+"' GROUP BY Style;";
         Connection connection = Conexion.getConnection();
         try {
             Statement st = connection.createStatement();
