@@ -190,7 +190,7 @@ public class Crud_Times {
 
     public List<Times> BuscarTiemposRut(int Id_time) throws SQLException {
         List<Times> departamentos = null;
-        String query = "SELECT * FROM times WHERE ID_Time = '" + Id_time + "' GROUP BY ID_Athele ORDER BY ID_Time ASC, ID_Athele";
+        String query = "SELECT * FROM times WHERE ID_Time = '" + Id_time + "' GROUP BY ID_Athele";
         Connection connection = Conexion.getConnection();
         try {
             Statement st = connection.createStatement();
