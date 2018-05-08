@@ -16,14 +16,14 @@ function GraficaLineal() {
 
             var stilePoint = ['circle', 'triangle', 'rect', 'rectRot', 'star'];
 ///Valores Eje X
-            var tamaño = 0;
+            var tamano = 0;
             for (var i = 1, max = lista.length; i < max; i++) {
-                if (tamaño < lista[i].length) {
-                    tamaño = lista[i].length;
+                if (tamano < lista[i].length) {
+                    tamano = lista[i].length;
                 }
             }
             var labelsDt = [];
-            for (var i = 0, max = tamaño; i < max; i++) {
+            for (var i = 0, max = tamano; i < max; i++) {
                 labelsDt.push("Serie " + (i + 1));
             }
 
