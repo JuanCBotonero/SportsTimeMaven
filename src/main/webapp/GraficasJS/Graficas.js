@@ -6,8 +6,9 @@
 
 function GraficaLineal() {
     $.ajax({
-        url: "Graficas",
-        type: 'Get',
+        url: "GrficaFiltrosSv",
+        data: {DistanciaJX: $("#DistaciaF").val()},
+        type: "POST",
         success: function (data) {
             console.log("ID DISTANCIA:"+$("#DistaciaF").val());
             var listasDatos = $.parseJSON(data);
