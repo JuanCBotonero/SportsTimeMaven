@@ -272,7 +272,7 @@ function DatosFiltro(nombre) {
 function DatosFiltro2() {
     $.ajax({
         url: "GrficaFiltrosSv",
-        data: {DistanciaJX: $("#DistaciaF").val(), nombreDepJX: nombre},
+        data: {DistanciaJX: $("#DistaciaF").val()},
         type: "POST",
         success: function (data) {
             var listasDatos = $.parseJSON(data);
