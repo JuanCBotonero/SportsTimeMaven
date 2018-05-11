@@ -6,7 +6,7 @@
 
 function GraficaLineal() {
     $.ajax({
-        url: "GrficaFiltrosSv",
+        url: "Graficas",
         data: {DistanciaJX: $("#DistaciaF").val()},
         type: "POST",
         success: function (data) {
@@ -277,7 +277,7 @@ function DatosFiltro2() {
         type: "POST",
         success: function (data) {
             var listasDatos = $.parseJSON(data);
-            var lista = listasDatos[1];
+            var lista = listasDatos[2];
             console.log("Datos Filtro: "+ lista);
             GraficaLineal();
         },
