@@ -18,16 +18,18 @@ function GraficaLineal() {
             var stilePoint = ['circle', 'triangle', 'rect', 'rectRot', 'star'];
 ///Valores Eje X
             var tamano = 0;
+            console.log("Tamaño:" +tamano);
             for (var i = 1, max = lista.length; i < max; i++) {
-                if (tamano < lista[i].length) {
-                    tamano = lista[i].length;
+                if (this.tamano < lista[i].length) {
+                    this.tamano = lista[i].length;
                 }
             }
+            console.log("Tamaño:" +tamano);
             var labelsDt = [];
-            for (var i = 0, max = tamano; i < max; i++) {
+            for (var i = 0, max = this.tamano; i < max; i++) {
                 labelsDt.push("Serie " + (i + 1));
             }
-            console.log("Nombres:" +labelsDt);
+            console.log("Series:" +labelsDt);
             var barChartData = {
                 labels: labelsDt,
                 datasets: []
