@@ -51,14 +51,14 @@ public class Graficas extends HttpServlet {
             ///posiscion 2
             List<List> datosFilFecEnt = new ArrayList<List>();
             
-            if (Distancia!=null) {
-                distID=Integer.parseInt(Distancia);
-                System.out.println("####### ID DISTANCIA");
-                System.out.println(distID);
-                System.out.println("#######");
-                datosFilFecEnt = dao3.datosFiltroGrafica(distID, "Camilo botonero");
-            }
-            
+//            if (Distancia!=null) {
+//                distID=Integer.parseInt(Distancia);
+//                System.out.println("####### ID DISTANCIA");
+//                System.out.println(distID);
+//                System.out.println("#######");
+//                datosFilFecEnt = dao3.datosGrafica(distID);
+//            }
+            datosFilFecEnt = dao3.datosGrafica(44);
             
             List<List> dotGraficas = new ArrayList<List>();
             dotGraficas.add(datosFecha);
