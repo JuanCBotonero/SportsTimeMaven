@@ -7,8 +7,7 @@
 function GraficaLineal() {
     $.ajax({
         url: "Graficas",
-        data: {DistanciaJX: $("#DistaciaF").val()},
-        type: "POST",
+        type: 'Get',
         success: function (data) {
             console.log($("#DistaciaF").val()+ " " + $("#DistaciaF").val());
             var listasDatos = $.parseJSON(data);
