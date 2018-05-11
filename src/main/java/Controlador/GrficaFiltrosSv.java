@@ -67,7 +67,7 @@ public class GrficaFiltrosSv extends HttpServlet {
             ///posiscion 3
             dotGraficas.add(datosFiltro);
             ///posiscion 4
-            List<List> datosFilFecEnt = new ArrayList<>();
+            List<List> datosFilFecEnt = new ArrayList<List>();
             datosFilFecEnt = dao3.datosGrafica(44);
             dotGraficas.add(datosFilFecEnt);
             
