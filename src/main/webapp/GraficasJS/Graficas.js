@@ -271,7 +271,7 @@ function DatosFiltro(nombre) {
 
 function DatosFiltro2() {
     $.ajax({
-        url: "GrficaFiltrosSv",
+        url: "Graficas",
         data: {DistanciaJX: $("#DistaciaF").val()},
         type: "POST",
         success: function (data) {

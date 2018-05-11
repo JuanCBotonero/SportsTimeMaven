@@ -60,10 +60,9 @@ public class Graficas extends HttpServlet {
             }
             
             List<List> dotGraficas = new ArrayList<List>();
-            dotGraficas.add(datosFecha);
-//            System.out.println(dotGraficas.get(0));
-            dotGraficas.add(datosEstilos);
-            dotGraficas.add(datosFilFecEnt);
+            dotGraficas.add(datosFecha);///0
+            dotGraficas.add(datosEstilos);///1
+            dotGraficas.add(datosFilFecEnt);///2
 
             s = gson.toJson(dotGraficas);
         } catch (SQLException ex) {
