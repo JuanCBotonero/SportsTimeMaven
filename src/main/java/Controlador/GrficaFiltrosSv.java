@@ -54,7 +54,7 @@ public class GrficaFiltrosSv extends HttpServlet {
             if (Distancia!=null) {
                 distID=Integer.parseInt(Distancia);
                 System.out.println(distID);
-                datosFiltro = dao3.datosGrafica(44);
+                datosFiltro = dao3.datosFiltroGrafica(distID, nombreDep);
             }
 
             List<List> dotGraficas = new ArrayList<List>();

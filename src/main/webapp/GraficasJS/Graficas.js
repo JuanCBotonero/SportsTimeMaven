@@ -6,13 +6,13 @@
 
 function GraficaLineal() {
     $.ajax({
-        url: "GrficaFiltrosSv",
+        url: "Graficas",
         type: "GET",
         success: function (data) {
             console.log("ID DISTANCIA:"+$("#DistaciaF").val());
             var listasDatos = $.parseJSON(data);
             console.log("Datos Servlet:"+listasDatos);
-            var lista = listasDatos[3];
+            var lista = listasDatos[2];
             var nombres = lista[0];
             var stilePoint = ['circle', 'triangle', 'rect', 'rectRot', 'star'];
 ///Valores Eje X
@@ -272,11 +272,11 @@ function DatosFiltro(nombre) {
 function DatosFiltro2() {
     $.ajax({
         url: "GrficaFiltrosSv",
-        data: {DistanciaJX: $("#DistaciaF").val()},
+        data: {DistanciaJX: $("#DistaciaF").val(), nombreDepJX: nombre},
         type: "POST",
         success: function (data) {
             var listasDatos = $.parseJSON(data);
-            var lista = listasDatos[3];
+            var lista = listasDatos[2];
             console.log("Datos Filtro: "+ lista);
             GraficaLineal();
         },
