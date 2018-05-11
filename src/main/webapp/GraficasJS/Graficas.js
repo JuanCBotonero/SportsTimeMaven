@@ -7,8 +7,7 @@
 function GraficaLineal() {
     $.ajax({
         url: "Graficas",
-        data: {DistanciaJX: $("#DistaciaF").val()},
-        type: "POST",
+        type: "GET",
         success: function (data) {
             console.log("ID DISTANCIA:"+$("#DistaciaF").val());
             var listasDatos = $.parseJSON(data);
@@ -272,12 +271,12 @@ function DatosFiltro(nombre) {
 
 function DatosFiltro2() {
     $.ajax({
-        url: "Graficas",
-        data: {DistanciaJX: $("#DistaciaF").val()},
+        url: "GrficaFiltrosSv",
+        data: {DistanciaJX: $("#DistaciaF").val(), nombreDepJX: nombre},
         type: "POST",
         success: function (data) {
             var listasDatos = $.parseJSON(data);
-            var lista = listasDatos[2];
+            var lista = listasDatos[4];
             console.log("Datos Filtro: "+ lista);
             GraficaLineal();
         },
