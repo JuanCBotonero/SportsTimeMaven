@@ -57,7 +57,11 @@ public class Graficas extends HttpServlet {
                 System.out.println("####### ID DISTANCIA");
                 System.out.println(distID);
                 System.out.println("#######");
-                datosFilFecEnt = dao3.datosGrafica(44);
+                datosFilFecEnt = dao3.datosGrafica(distID);
+                
+            Prueba.add("MArio");
+            Prueba.add("Camilo");
+            Prueba.add("Viviana");
             }
             
             
@@ -67,7 +71,8 @@ public class Graficas extends HttpServlet {
             dotGraficas.add(datosFecha);
 //            System.out.println(dotGraficas.get(0));
             dotGraficas.add(datosEstilos);
-            dotGraficas.add(datosFilFecEnt);
+//            dotGraficas.add(datosFilFecEnt);
+            dotGraficas.add(Prueba);
 
             s = gson.toJson(dotGraficas);
         } catch (SQLException ex) {
