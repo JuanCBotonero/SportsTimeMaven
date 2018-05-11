@@ -15,9 +15,6 @@ function GraficaLineal() {
             console.log(listasDatos);
             var lista = listasDatos[2];
             var nombres = lista[0];
-            console.log("lista");
-            console.log(lista);
-
             var stilePoint = ['circle', 'triangle', 'rect', 'rectRot', 'star'];
 ///Valores Eje X
             var tamano = 0;
@@ -30,8 +27,7 @@ function GraficaLineal() {
             for (var i = 0, max = tamano; i < max; i++) {
                 labelsDt.push("Serie " + (i + 1));
             }
-            console.log("nombres");
-            console.log(labelsDt);
+            console.log("Nombres:" +labelsDt);
             var barChartData = {
                 labels: labelsDt,
                 datasets: []
@@ -192,7 +188,7 @@ function FiltroFecha2(NombreEnt) {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[0];
-            console.log(lista);
+            console.log("Fechas "+ lista);
             $("#FehcasF").empty();
             if (lista !== null) {
                 for (var i = 0, max = lista.length; i < max; i++) {
@@ -215,6 +211,7 @@ function FiltroEstilos() {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[1];
+            console.log("Estilos: "+ lista);
             $("#EstilosF").empty();
             if (lista !== null) {
                 for (var i = 0, max = lista.length; i < max; i++) {
@@ -239,6 +236,7 @@ function FiltroDistancia() {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[2];
+            console.log("Distancia: "+ lista);
             $("#DistaciaF").empty();
             if (lista !== null) {
                 for (var i = 0, max = lista.length; i < max; i++) {
@@ -278,7 +276,7 @@ function DatosFiltro2() {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[2];
-            console.log(lista);
+            console.log("Datos Filtro: "+ lista);
             GraficaLineal();
         },
         error: function () {
