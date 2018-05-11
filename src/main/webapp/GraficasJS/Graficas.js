@@ -9,9 +9,13 @@ function GraficaLineal() {
         url: "Graficas",
         type: 'Get',
         success: function (data) {
+            console.log($("#DistaciaF").val()+ " " + $("#DistaciaF").val());
             var listasDatos = $.parseJSON(data);
+            console.log("lista de datos traidos");
+            console.log(listasDatos);
             var lista = listasDatos[2];
             var nombres = lista[0];
+            console.log("lista");
             console.log(lista);
 
             var stilePoint = ['circle', 'triangle', 'rect', 'rectRot', 'star'];
@@ -26,7 +30,7 @@ function GraficaLineal() {
             for (var i = 0, max = tamano; i < max; i++) {
                 labelsDt.push("Serie " + (i + 1));
             }
-
+            console.log("nombres");
             console.log(labelsDt);
             var barChartData = {
                 labels: labelsDt,
@@ -57,7 +61,7 @@ function GraficaLineal() {
                 }
 
                 newDataset.data = nombreDat;
-
+                
                 console.log(nombreDat)
                 barChartData.datasets.push(newDataset);
             }
