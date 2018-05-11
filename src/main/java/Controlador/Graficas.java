@@ -56,7 +56,7 @@ public class Graficas extends HttpServlet {
                 System.out.println("####### ID DISTANCIA");
                 System.out.println(distID);
                 System.out.println("#######");
-                datosFilFecEnt = dao3.datosGrafica(44);
+                datosFilFecEnt = dao3.datosGrafica(distID);
             }
             
             List<List> dotGraficas = new ArrayList<List>();
