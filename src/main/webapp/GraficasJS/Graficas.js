@@ -276,7 +276,7 @@ function DatosFiltro2() {
         type: "POST",
         success: function (data) {
             var listasDatos = $.parseJSON(data);
-            var lista = listasDatos[2];
+            var lista = listasDatos[0];
             console.log("Datos Filtro: "+ lista);
             GraficaLineal();
         },
