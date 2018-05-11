@@ -9,10 +9,9 @@ function GraficaLineal() {
         url: "Graficas",
         type: 'Get',
         success: function (data) {
-            console.log($("#DistaciaF").val()+ " " + $("#DistaciaF").val());
+            console.log("ID DISTANCIA:"+$("#DistaciaF").val());
             var listasDatos = $.parseJSON(data);
-            console.log("lista de datos traidos");
-            console.log(listasDatos);
+            console.log("Datos Servlet:"+listasDatos);
             var lista = listasDatos[2];
             var nombres = lista[0];
             var stilePoint = ['circle', 'triangle', 'rect', 'rectRot', 'star'];
