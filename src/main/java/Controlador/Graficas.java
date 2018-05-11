@@ -59,12 +59,12 @@ public class Graficas extends HttpServlet {
                 System.out.println("#######");
                 datosFilFecEnt = dao3.datosGrafica(distID);
                 
-            
-            }
-            
             Prueba.add("MArio");
             Prueba.add("Camilo");
             Prueba.add("Viviana");
+            }
+            
+            
             
             
             List<List> dotGraficas = new ArrayList<List>();
