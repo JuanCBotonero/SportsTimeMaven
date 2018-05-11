@@ -54,7 +54,7 @@ public class GrficaFiltrosSv extends HttpServlet {
             if (Distancia!=null) {
                 distID=Integer.parseInt(Distancia);
                 System.out.println(distID);
-                datosFiltro = dao3.datosFiltroGrafica(distID, nombreDep);
+                datosFiltro = dao3.datosGrafica(44);
             }
 
             List<List> dotGraficas = new ArrayList<List>();
@@ -66,10 +66,6 @@ public class GrficaFiltrosSv extends HttpServlet {
             dotGraficas.add(datosDistancias);
             ///posiscion 3
             dotGraficas.add(datosFiltro);
-            ///posiscion 4
-            List<List> datosFilFecEnt = new ArrayList<List>();
-            datosFilFecEnt = dao3.datosGrafica(44);
-            dotGraficas.add(datosFilFecEnt);
             
             s = gson.toJson(dotGraficas);
             

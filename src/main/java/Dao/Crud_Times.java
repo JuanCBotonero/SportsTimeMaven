@@ -156,10 +156,10 @@ public class Crud_Times {
 
         for (String nombres : listNombres) {
             listTiempos = new ArrayList<String>();
-            for (Object tiempoS : datosFiltroGrafica(iD_Tiempo, nombres).get(1)) {
-                String tiempo = tiempoS.toString();
-                listTiempos.add(tiempo);
-            }
+//            for (Object tiempoS : datosFiltroGrafica(iD_Tiempo, nombres).get(1)) {
+//                String tiempo = tiempoS.toString();
+//                listTiempos.add(tiempo);
+//            }
             listaDoble.add(listTiempos);
         }
 
