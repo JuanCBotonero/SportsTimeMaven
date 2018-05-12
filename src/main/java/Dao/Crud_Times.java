@@ -73,7 +73,7 @@ public class Crud_Times {
 
     public List<Times> DatosFiltro(int iD_Tiempo, String nomDep) throws SQLException {
         List<Times> departamentos = null;
-        String query = "SELECT * FROM times WHERE ID_Time=" + iD_Tiempo + " AND ID_Athele=" + nomDep + "; ";
+        String query = "SELECT * FROM times WHERE ID_Time=" + iD_Tiempo + " AND ID_Athele='" + nomDep + "';";
         Connection connection = Conexion.getConnection();
         try {
             Statement st = connection.createStatement();
