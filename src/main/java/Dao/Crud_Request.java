@@ -50,7 +50,7 @@ public class Crud_Request {
                 destiny = rs.getString("destiny");
                 registro.setDestiny(destiny);
 
-                state = rs.getString("state");
+                state = rs.getString("state1");
                 registro.setState(state);
 
                 departamentos.add(registro);
@@ -69,7 +69,7 @@ public class Crud_Request {
     public boolean insert(Request t) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " insert into requests (user1,destiny,state)" + "values (?,?,?)";
+        String query = " insert into requests (user1,destiny,state1)" + "values (?,?,?)";
         PreparedStatement preparedStmt = null;
 
         try {
@@ -89,7 +89,7 @@ public class Crud_Request {
     public boolean update(String state, String user, String destiny) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " update requests SET state=? WHERE  user1=? AND `destiny`=? AND `state`='en espera' ";
+        String query = " update requests SET state1=? WHERE  user1=? AND `destiny`=? AND `state1`='en espera' ";
         PreparedStatement preparedStmt = null;
         try {
 
@@ -108,7 +108,7 @@ public class Crud_Request {
     public boolean delete(String state, String user, String destiny) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " delete from requests WHERE `user1`=? AND `destiny`=? AND `state`=?";
+        String query = " delete from requests WHERE `user1`=? AND `destiny`=? AND `state1`=?";
         
         PreparedStatement preparedStmt = null;
         try {
