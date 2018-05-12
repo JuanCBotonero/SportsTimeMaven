@@ -7,28 +7,27 @@
 function GraficaLineal() {
     $.ajax({
         url: "Graficas",
-        type: "GET",
+        type: 'Get',
         success: function (data) {
-            console.log("ID DISTANCIA:"+$("#DistaciaF").val());
             var listasDatos = $.parseJSON(data);
-            console.log("Datos Servlet:"+listasDatos);
             var lista = listasDatos[2];
             var nombres = lista[0];
+            console.log(lista);
+
             var stilePoint = ['circle', 'triangle', 'rect', 'rectRot', 'star'];
 ///Valores Eje X
-            var tamano = 0;
-            console.log("Tama�o:" +tamano);
+            var tamaño = 0;
             for (var i = 1, max = lista.length; i < max; i++) {
-                if (this.tamano < lista[i].length) {
-                    this.tamano = lista[i].length;
+                if (tamaño < lista[i].length) {
+                    tamaño = lista[i].length;
                 }
             }
-            console.log("Tama�o:" +tamano);
             var labelsDt = [];
-            for (var i = 0, max = this.tamano; i < max; i++) {
+            for (var i = 0, max = tamaño; i < max; i++) {
                 labelsDt.push("Serie " + (i + 1));
             }
-            console.log("Series:" +labelsDt);
+
+            console.log(labelsDt);
             var barChartData = {
                 labels: labelsDt,
                 datasets: []
@@ -58,7 +57,7 @@ function GraficaLineal() {
                 }
 
                 newDataset.data = nombreDat;
-                
+
                 console.log(nombreDat)
                 barChartData.datasets.push(newDataset);
             }
@@ -189,7 +188,7 @@ function FiltroFecha2(NombreEnt) {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[0];
-            console.log("Fechas "+ lista);
+            console.log(lista);
             $("#FehcasF").empty();
             if (lista !== null) {
                 for (var i = 0, max = lista.length; i < max; i++) {
@@ -212,7 +211,6 @@ function FiltroEstilos() {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[1];
-            console.log("Estilos: "+ lista);
             $("#EstilosF").empty();
             if (lista !== null) {
                 for (var i = 0, max = lista.length; i < max; i++) {
@@ -237,7 +235,6 @@ function FiltroDistancia() {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[2];
-            console.log("Distancia: "+ lista);
             $("#DistaciaF").empty();
             if (lista !== null) {
                 for (var i = 0, max = lista.length; i < max; i++) {
@@ -277,7 +274,7 @@ function DatosFiltro2() {
         success: function (data) {
             var listasDatos = $.parseJSON(data);
             var lista = listasDatos[2];
-            console.log("Datos Filtro: "+ listasDatos);
+            console.log(lista);
             GraficaLineal();
         },
         error: function () {

@@ -145,7 +145,6 @@ public class Crud_List {
         String fecha_y_hora = hourdateFormat.format(date);
         PreparedStatement preparedStmt = null;
 
-        
         try {
 
             preparedStmt = connection.prepareStatement(query);
@@ -161,5 +160,8 @@ public class Crud_List {
         }
         return result;
     }
+
+  
+    
 
 }

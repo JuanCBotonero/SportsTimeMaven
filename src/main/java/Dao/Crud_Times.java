@@ -156,10 +156,10 @@ public class Crud_Times {
 
         for (String nombres : listNombres) {
             listTiempos = new ArrayList<String>();
-//            for (Object tiempoS : datosFiltroGrafica(iD_Tiempo, nombres).get(1)) {
-//                String tiempo = tiempoS.toString();
-//                listTiempos.add(tiempo);
-//            }
+            for (Object tiempoS : datosFiltroGrafica(iD_Tiempo, nombres).get(1)) {
+                String tiempo = tiempoS.toString();
+                listTiempos.add(tiempo);
+            }
             listaDoble.add(listTiempos);
         }
 
@@ -190,7 +190,7 @@ public class Crud_Times {
 
     public List<Times> BuscarTiemposRut(int Id_time) throws SQLException {
         List<Times> departamentos = null;
-        String query = "SELECT id_athele FROM times WHERE id_time = '" + Id_time + "' GROUP BY id_athele;";
+        String query = "SELECT * FROM times WHERE ID_Time = '" + Id_time + "' GROUP BY ID_Athele ORDER BY ID_Time ASC, ID_Athele";
         Connection connection = Conexion.getConnection();
         try {
             Statement st = connection.createStatement();
