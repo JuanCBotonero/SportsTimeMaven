@@ -89,7 +89,7 @@ public class Crud_Request {
     public boolean update(String state, String user, String destiny) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " update requests SET state1=? WHERE  user1=? AND `destiny`=? AND `state1`='en espera' ";
+        String query = " update requests SET state1=? WHERE  user1=? AND destiny=? AND state1='en espera' ";
         PreparedStatement preparedStmt = null;
         try {
 
