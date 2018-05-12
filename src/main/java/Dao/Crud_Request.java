@@ -108,7 +108,7 @@ public class Crud_Request {
     public boolean delete(String state, String user, String destiny) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " delete from requests WHERE `user1`=? AND `destiny`=? AND `state1`=?";
+        String query = " delete from requests WHERE user1=? AND destiny=? AND state1=?";
         
         PreparedStatement preparedStmt = null;
         try {
