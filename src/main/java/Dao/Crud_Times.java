@@ -125,8 +125,9 @@ public class Crud_Times {
         List<String> listNombres = new ArrayList<String>();
         List<String> listTiempos = new ArrayList<String>();
         
+        listNombres.add(nomDep);
+        
         for (Times times : DatosFiltro(iD_Tiempo, nomDep)) {
-            listNombres.add(times.getID_Athele());
             listTiempos.add(ConvertirTime(times.getTime()));
         }
 
