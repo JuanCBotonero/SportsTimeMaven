@@ -18,7 +18,7 @@
     <script src="GraficasJS/Graficas.js"></script>
     <!fin de scrip graficas LIneales>
 
-        <script type="text/javascript" src="js/chartJS/Chart.min.js"></script>
+        
 
 
         
