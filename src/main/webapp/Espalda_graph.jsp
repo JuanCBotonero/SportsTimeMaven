@@ -163,12 +163,10 @@
                                         <br>
                                         <br>
                                         <br>
-                                        <center>
-                                            <button class="btn btn-info btn-round" onclick="GraficaFiltros('<%=nomDep%>')">Grafica</button>
-                                        </center>
-                                        <br>
-                                        <br><br><br>
-                                        <div ><canvas id="grafico"></canvas></div>
+                                         <div id="canvas-holder1">
+                                        <canvas id="chart2"></canvas>
+                                        <button onclick="toggleSmooth(this)">Smooth</button>
+                                    </div>
 
                                     </div>
 
