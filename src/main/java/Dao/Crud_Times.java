@@ -208,17 +208,17 @@ public class Crud_Times {
 
                 Times registro = new Times();
 
-                ID_Time = rs.getInt("ID_Time");
-                registro.setID_Time(ID_Time);
+//                ID_Time = rs.getInt("ID_Time");
+//                registro.setID_Time(ID_Time);
 
-                ID_Routing = rs.getInt("ID_Routing");
-                registro.setID_Routing(ID_Routing);
+//                ID_Routing = rs.getInt("ID_Routing");
+//                registro.setID_Routing(ID_Routing);
 
                 ID_Athele = rs.getString("ID_Athele");
                 registro.setID_Athele(ID_Athele);
 
-                Time1 = rs.getString("Time1");
-                registro.setTime(Time1);
+//                Time1 = rs.getString("Time1");
+//                registro.setTime(Time1);
 
                 departamentos.add(registro);
             }
