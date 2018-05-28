@@ -20,7 +20,7 @@ public class DaoEventos {
 
     public List<Eventos> ListarEventos() throws SQLException {
         List<Eventos> eventos = new ArrayList<Eventos>();
-        String query = "SELECT * FROM EVENTS";
+        String query = "SELECT * FROM events";
         Connection connection = Conexion.getConnection();
         try {
             Statement st = connection.createStatement();
@@ -53,7 +53,7 @@ public class DaoEventos {
     public void addEvento(Eventos objetoAdd) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("INSERT INTO events (id, start_date, end_date, text, subject) VALUES (?, ?, ?, ?, ?);");
+                    .prepareStatement("insert into events (id, start_date, end_date, text, subject)" +  "values (?, ?, ?, ?, ?)");
             // Parameters start with 1
             preparedStatement.setInt(1, (int) objetoAdd.getId());
             preparedStatement.setString(2, objetoAdd.getStart_date());
