@@ -53,7 +53,7 @@ public class DaoEventos {
     public void addEvento(Eventos objetoAdd) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("INSERT INTO events (`id`, `start_date`, `end_date`, `text`, `subject`) VALUES (?, ?, ?, ?, ?);");
+                    .prepareStatement("INSERT INTO events (id, start_date, end_date, text, subject) VALUES (?, ?, ?, ?, ?);");
             // Parameters start with 1
             preparedStatement.setInt(1, (int) objetoAdd.getId());
             preparedStatement.setString(2, objetoAdd.getStart_date());
