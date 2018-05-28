@@ -58,7 +58,7 @@ public class Register_Servlet extends HttpServlet {
 
         if (!FotoName.equals("default.png")) {
             Part FotoFile = request.getPart("fotofile");
-            final String path = "SportsTimeMaven/src/main/webapp/fotosdb/";    
+            final String path = "../src/main/webapp/fotosdb/";    
             InputStream filecontent = FotoFile.getInputStream();
             PrintWriter out = response.getWriter();
             File file = new File(path + FotoName);
