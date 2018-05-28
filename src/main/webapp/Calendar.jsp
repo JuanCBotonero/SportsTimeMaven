@@ -5,6 +5,8 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Sports Time - Calendario</title>
 
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+
     <script src="codebase/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="./codebase/dhtmlxscheduler.css">
 
@@ -18,6 +20,7 @@
     </style>
 
     <style type="text/css" >
+
         html, body{
             margin:0;
             padding:0;
@@ -70,6 +73,7 @@
         .dhx_cal_event_clear.event_rosa {
             color:#B82594 !important;
         }
+
     </style>
 
     <script type="text/javascript" charset="utf-8">
@@ -94,18 +98,6 @@
                 }
                 return css; // default return
 
-                /*
-                 Note that it is possible to create more complex checks
-                 events with the same properties could have different CSS classes depending on the current view:
-                 
-                 var mode = scheduler.getState().mode;
-                 if(mode == "day"){
-                 // custom logic here
-                 }
-                 else {
-                 // custom logic here
-                 }
-                 */
             };
 
             var subject = [
@@ -124,15 +116,41 @@
             var dt = new Date()
             scheduler.init('scheduler_here', new Date(dt.getFullYear(), dt.getMonth(), dt.getDay()), "month");
 
-            scheduler.parse([
-                {start_date: "2018-05-18 09:00", end_date: "2018-05-18 12:00", text: "Rosa", subject: 'rosa'},
-                {start_date: "2018-05-20 10:00", end_date: "2018-05-21 16:00", text: "Amarillo", subject: 'amarillo'},
-                {start_date: "2018-05-21 10:00", end_date: "2018-05-21 14:00", text: "Verde", subject: 'verde'},
-                {start_date: "2018-05-23 16:00", end_date: "2018-05-23 17:00", text: "Rosa", subject: 'rosa '},
-                {start_date: "2018-05-22 09:00", end_date: "2018-05-22 17:00", text: "Azul"}
-            ], "json");
+            //CREAR UN LLAMADO AJAX A UN SERVLET. EL SERVLET ENTREGA LA LISTA DE EVENTOS. ESTA LISTA DE EVENTOS DEBE TENER EL FORMATO LOS CREADOS.
+            //EL SERVLET LOS ENTREGA EN JSON Y ACÀ SE PARSEA 
+
+            $.ajax({
+                url: 'EventoSv',
+                type: 'GET',
+                success: function (result) {
+                    console.log(result);
+                    scheduler.parse(result, "json");
+
+                }
+
+            });
+
+            // Lista de eventos extraída de la base de datos, convirtiéndola a JSON.
 
         }
+
+        //Agregar evento: hacer llamado AJAX para enviar la variable "ev" al Servlet.
+        scheduler.attachEvent("onEventAdded", function (id, ev) {
+            console.log(ev);
+            var tempAgregar = 1;
+
+            $.ajax({
+                url: 'EventoSv',
+                data: {id: id, ev: JSON.stringify(ev)},
+                type: 'POST',
+                complete: function (result) {
+                    console.log(result);
+                }
+
+            });
+
+        });
+
     </script>
 
     <%
@@ -146,6 +164,24 @@
     }
     %>
 
+    <style>
+
+        .buttonVolver {
+            background-color: #008CBA; /* Green */
+            border: none;
+            color: white;
+            padding: 6px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 230px;
+            margin-top: 3px;
+            border-radius: 5px;
+        }
+
+    </style>
+
 </head>
 
 <body onload="init();">
@@ -158,6 +194,8 @@
             <div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
             <div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
             <div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+            <br>
+            <a href="Login.jsp"><button class="buttonVolver">Volver</button></a> 
         </div>
         <div class="dhx_cal_header">
         </div>

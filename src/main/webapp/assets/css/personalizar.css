@@ -1,18 +1,68 @@
-﻿.form-control, .is-focused .form-control {
-                background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
-            }
+.form-control, .is-focused .form-control {
+    background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
 
 .form-check .form-check-label .circle .check {
-                height: 15px;
-                width: 15px;
-                border-radius: 100%;
-                background-color: #00bcd4;
-                -webkit-transform: scale3d(0, 0, 0);
-                -moz-transform: scale3d(0, 0, 0);
-                -o-transform: scale3d(0, 0, 0);
-                -ms-transform: scale3d(0, 0, 0);
-                transform: scale3d(0, 0, 0);
-            }
-            .form-check .form-check-input:checked~.circle {
-                border-color: #2196f3;
-            }
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background-color: #00bcd4;
+    -webkit-transform: scale3d(0, 0, 0);
+    -moz-transform: scale3d(0, 0, 0);
+    -o-transform: scale3d(0, 0, 0);
+    -ms-transform: scale3d(0, 0, 0);
+    transform: scale3d(0, 0, 0);
+}
+
+.form-check .form-check-input:checked~.circle {
+    border-color: #2196f3;
+} 
+
+.signup-page .page-header .container {
+    padding-top: 0vh;
+}
+
+a {
+    color: #311cb7;
+}
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.containerC {
+    border-radius: 5px;
+    background-color: #BEE2F8;
+    padding: 20px;
+}
+
+
+.line{
+    align-self: center;
+    width: 87%;
+    border-bottom: 1px solid black;
+}
