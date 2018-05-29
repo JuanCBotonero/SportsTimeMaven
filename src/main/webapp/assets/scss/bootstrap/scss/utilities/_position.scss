@@ -9,6 +9,7 @@ $positions: static, relative, absolute, fixed, sticky;
   .position-#{$position} { position: $position !important; }
 }
 
+
 // Shorthand
 
 .fixed-top {

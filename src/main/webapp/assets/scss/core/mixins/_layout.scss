@@ -5,6 +5,7 @@
       visibility: visible;
       background-color: rgba(0, 0, 0, 0.5);
     }
+    
 
     @supports (pointer-events: auto) {
       &.in {
